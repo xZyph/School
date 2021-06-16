@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+<?import no.hiof.mariumi.oblig4.customcomponents.numberfield.NumberField?>
+
+<AnchorPane prefHeight="640.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="no.hiof.mariumi.oblig4.controller.EditMovieController">
+    <children>
+        <AnchorPane layoutX="-1.0" prefHeight="75.0" prefWidth="800.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <HBox layoutX="14.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="75.0" prefWidth="200.0" style="-fx-background-color: #3472d8;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <children>
+                        <Label minHeight="-Infinity" minWidth="-Infinity" prefHeight="75.0" prefWidth="500.0" text="Movie Overview" textFill="WHITE">
+                            <HBox.margin>
+                                <Insets />
+                            </HBox.margin>
+                            <padding>
+                                <Insets left="20.0" />
+                            </padding>
+                            <font>
+                                <Font name="Calibri Light" size="30.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </HBox>
+            </children></AnchorPane>
+        <AnchorPane layoutY="75.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="75.0">
+            <children>
+                <HBox layoutX="14.0" layoutY="446.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="50.0" prefWidth="200.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="0.0">
+                    <children>
+                        <Button fx:id="btnNew" alignment="TOP_LEFT" contentDisplay="CENTER" disable="true" minHeight="25.0" minWidth="40.0" mnemonicParsing="false" text="New">
+                            <HBox.margin>
+                                <Insets top="15.0" />
+                            </HBox.margin>
+                        </Button>
+                        <Button fx:id="btnEdit" disable="true" minHeight="25.0" minWidth="37.0" mnemonicParsing="false" text="Edit">
+                            <HBox.margin>
+                                <Insets left="20.0" top="15.0" />
+                            </HBox.margin>
+                        </Button>
+                        <Button fx:id="btnDelete" disable="true" minHeight="25.0" minWidth="51.0" mnemonicParsing="false" text="Delete">
+                            <HBox.margin>
+                                <Insets left="20.0" top="15.0" />
+                            </HBox.margin>
+                        </Button>
+                    </children>
+                </HBox>
+                <GridPane layoutX="14.0" layoutY="14.0" AnchorPane.bottomAnchor="55.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                    <children>
+                        <ListView fx:id="movieList" disable="true" minHeight="250.0" prefHeight="200.0" prefWidth="200.0" />
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+                            <children>
+                                <AnchorPane layoutX="14.0" layoutY="14.0" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #e8e8e8;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <children>
+                                        <Label fx:id="titleLabel" alignment="CENTER" layoutX="67.0" layoutY="17.0" minWidth="200.0" text="Movie Title" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="10.0">
+                                            <font>
+                                                <Font name="Calibri" size="24.0" />
+                                            </font>
+                                        </Label>
+                                    </children>
+                                </AnchorPane>
+                                <GridPane layoutX="95.0" layoutY="121.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="70.0">
+                                    <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="181.0" minWidth="10.0" prefWidth="121.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="278.0" minWidth="10.0" prefWidth="259.0" />
+                                    </columnConstraints>
+                                    <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    </rowConstraints>
+                                    <children>
+                                        <Label minWidth="61.0" text="Description" GridPane.rowIndex="1" />
+                                        <Label minWidth="64.0" text="Releasedate" GridPane.rowIndex="2" />
+                                        <Label minWidth="45.0" text="Runtime (min)" GridPane.rowIndex="3" />
+                                        <TextArea fx:id="description" minHeight="100.0" prefHeight="200.0" prefWidth="200.0" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                        <NumberField fx:id="runtime" minHeight="25.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                        <DatePicker fx:id="releaseDate" minHeight="25.0" minWidth="260.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                        <Button fx:id="btnSave" minHeight="37.0" minWidth="55.0" mnemonicParsing="false" onAction="#saveMovie" text="Save" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="4">
+                                            <GridPane.margin>
+                                                <Insets right="76.0" />
+                                            </GridPane.margin>
+                                            <padding>
+                                                <Insets bottom="10.0" left="15.0" right="15.0" top="10.0" />
+                                            </padding>
+                                        </Button>
+                              <Button minHeight="37.0" minWidth="66.0" mnemonicParsing="false" onAction="#cancel" text="Cancel" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="4">
+                                 <padding>
+                                    <Insets bottom="10.0" left="15.0" right="15.0" top="10.0" />
+                                 </padding>
+                              </Button>
+                              <Label text="Title" />
+                              <TextField fx:id="title" GridPane.columnIndex="1" />
+                                    </children>
+                                </GridPane>
+                            </children>
+                        </AnchorPane>
+                    </children>
+                </GridPane>
+            </children>
+        </AnchorPane>
+    </children>
+</AnchorPane>

@@ -1,0 +1,456 @@
+/*******************************************
+  CONTENTS:
+  - Imports
+  - Variables
+  - Resets
+  - Global
+  - Header
+  - Navigation
+  - Sidebar
+  - Main
+  - Footer
+  - Tablet
+  - Phone
+********************************************/
+
+/* IMPORTS */
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+/* VARIABLES */
+
+:root {
+  --root-background-color: #000;
+  --root-background-image: url(../images/bg.png);
+  --root-font: 'Open Sans', sans-serif;
+  --root-shadow-light: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  --root-shadow-heavy: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+
+  --header-color: transparent;
+  --header-font: 'Montserrat', sans-serif;
+  --header-text: #fff;
+  
+  --navbar-color: #3B3B3B;
+  --navbar-highlight: #464646;
+  --navbar-text: #fff;
+
+  --main-header: #5c31b5;
+  --main-color: #fff;
+  --main-overlay: rgba(255, 255, 255, 0.8);
+  --main-text: #3B3B3B;
+
+  --image-border: rgba(0, 0, 0, 0.2);
+
+  --sidebar-color: #5c31b5;
+  --sidebar-text: #fff;
+  --sidebar-highlight: #cc8e4c;
+
+  --footer-color: #3B3B3B;
+  --footer-text: #fff;
+}
+
+/* RESETS */
+
+* {
+  margin: 0;
+  padding: 0; 
+}
+
+a {
+  text-decoration: none;
+}
+
+/* GLOBAL */
+
+html, body {
+  height: 100%;
+}
+
+body {
+  display: grid;
+  grid-template-columns: 1fr 900px 300px 1fr;
+  grid-template-rows: 110px 58px 1fr 58px;
+  grid-template-areas: ". header header ."
+ ". navbar navbar ."
+ ". main sidebar ."
+ ". footer footer .";
+  background: var(--root-background-color); 
+  background-image: var(--root-background-image);
+  background-repeat: repeat;
+  font-family: var(--root-font);
+}
+
+abbr[title], acronym[title] {
+	cursor: help; 
+	border-bottom: 1px dotted var(--main-header); 
+	text-decoration: none; 
+}
+
+/* HEADER */
+
+body > header {
+  grid-area: header; 
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--header-color);
+  color: var(--header-text);
+  padding: 0em 1em;
+}
+
+body > header h1 {
+  color: var(--header-text);
+  font-size: 2.5em;
+  font-family: var(--header-font);
+  font-weight: 5  00;
+  
+}
+
+#menu-toggle {
+  display: none;
+  font-size: 2em;
+}
+
+/* NAVIGATION */
+
+body > nav {
+  grid-area: navbar; 
+  background-color: var(--navbar-color);
+  box-shadow: var(--root-shadow-heavy);
+}
+
+#main-menu {
+  display: flex;
+}
+
+#main-menu li {
+  list-style: none;
+  display:  block;
+  display: flex;
+}
+
+#main-menu a {
+  margin: 1em;
+  color: var(--navbar-text);
+}
+
+#main-menu a::after {
+  content: '';
+  display: block;
+  height: 1px;
+  width: 0;
+  background: transparent;
+  transition: width .5s ease, background-color .5s ease;
+}
+
+#main-menu a:hover::after  {
+  width: 100%;
+  background-color: #fff;
+}
+
+
+.dropdown {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+}
+
+.dropdown-content {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  z-index: 1;
+  min-width: 160px;
+  background-color: var(--navbar-color);
+  top: 3em;
+  left: 0;
+  box-shadow: var(--root-shadow-light);
+}
+
+/* SIDEBAR */
+
+body > aside {
+  grid-area: sidebar;
+  background-color: var(--sidebar-color); 
+  color: var(--sidebar-text);
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--root-shadow-heavy);
+}
+
+body > aside h2 {
+  margin-bottom: 15px;
+}
+
+body > aside > section {
+  padding: 0.8em 1em;
+}
+
+body > aside > section:first-child {
+  padding-top: 1.5em;
+}
+
+body > aside p {
+  padding: 0.5em 0em 0.5em 0.5em;
+}
+
+body > aside p a {
+  transition: border-bottom 0.2s ease-in-out;
+  color: var(--sidebar-text);
+  border-bottom: 1px solid var(--sidebar-text);
+}
+
+body > aside p a:hover {
+  border-bottom: 1px solid var(--sidebar-highlight)
+}
+
+body > aside .fas {
+  padding-right: 5px;
+}
+
+.embed-container { 
+  position: relative; 
+  padding-bottom: 56.25%; 
+  height: 0; 
+  overflow: hidden; 
+  max-width: 100%; 
+  box-shadow: var(--root-shadow-light);
+} 
+
+.embed-container iframe, .embed-container object, .embed-container embed { 
+  position: absolute; 
+  top: 0; 
+  left: 0; 
+  width: 100%; 
+  height: 100%; 
+  border: 0;
+}
+
+/* MAIN */
+
+main {
+  grid-area: main; 
+  background-color: var(--main-color);
+  height: 100%;
+  box-shadow: var(--root-shadow-heavy);
+}
+
+main > article {
+  padding: 4em;
+}
+
+.no-border {
+  border: 0 !important;
+}
+
+.singlePost {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.singlePost h2 {
+  padding: 1.2em 0em;
+}
+
+.singlePost p {
+  padding: .5em 0em;
+}
+
+.singlePost a {
+  color: var(--main-header);
+  text-decoration: underline; 
+}
+
+.singlePost figure {
+  margin-top: 1em;
+  padding: 2em;
+  align-self: center;
+  text-align: center;
+}
+
+.singlePost figure img {
+  width: 100%;
+  max-width: 600px;
+  height: auto; 
+  border-radius: 15px;
+  border: 1px solid var(--image-border);
+}
+
+.singlePost .fig-overlay {
+  font-size: 0.8em;
+  padding: 0;
+}
+
+.singlePost p {
+  text-align: center;
+  position: relative;
+}
+
+.singlePost .segment::after {
+  content: '';
+  margin: 2em auto 0em auto;
+  display: block;
+  height: 1px;
+  width: calc(60%);
+  background: var(--main-text);
+}
+  
+.singlePost .breadcrumb {
+  list-style: none;
+  position: absolute;
+  top: 1em;
+  left: 4em;
+}
+
+.singlePost .breadcrumb li {
+  display: inline;
+}
+
+.singlePost .breadcrumb li+li:before {
+  content: "/\00a0";
+}
+
+.multiplePosts > article {
+  display: grid;
+  grid-template-columns: 25% 1fr;
+  grid-template-rows: .5fr 1fr 50px;
+  grid-template-areas: "multiplePostsHeader multiplePostsHeader"
+  "multiplePostsFigure multiplePostsMainContent"
+  "multiplePostsFigure multiplePostsReadMore";
+  grid-gap: .5em;
+}
+
+.multiplePosts header {
+  grid-area: multiplePostsHeader;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 1em;
+}
+
+.multiplePosts header h2 {
+  color: var(--main-header);
+  font-size: 1.5em;
+}
+
+.multiplePosts header p {
+  font-size: 0.8em;
+}
+
+.multiplePosts figure {
+  grid-area: multiplePostsFigure;
+}
+
+.multiplePosts figure img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.multiplePosts figcaption {
+  font-size: 0.6em;
+}
+
+.multiplePosts summary {
+  padding-left: 1em;
+}
+
+.multiplePosts > article > a {
+  color: var(--sidebar-text);
+  transition: background-color 0.2s ease-in-out;
+  border-bottom: 1px solid var(--sidebar-text);
+  font-size: 1rem;
+  grid-area: multiplePostsReadMore;
+  display: flex;
+  align-items: center;
+  padding: 1em;
+  border: 1px solid var(--main-text);
+  justify-self: right;
+  background-color: var(--sidebar-color);
+  border-radius: 5px;
+}
+
+.multiplePosts > article > a:hover {
+  background-color: var(--sidebar-highlight);
+}
+
+.multiplePosts hr {
+  margin: 3em;
+}
+
+/* FOOTER */
+
+body > footer {
+  grid-area: footer;
+  display: flex;
+  align-items: center;
+  padding-left: 1em;
+  background-color: var(--footer-color);
+  color: var(--footer-text);
+  box-shadow: var(--root-shadow-heavy);
+}
+
+/* TABLET */
+
+@media only screen and (max-width: 1200px) {
+  body {
+    grid-template-columns: 1fr;
+    grid-template-rows: 110px auto 1fr 1fr 58px;
+    grid-template-areas: "header"
+   "navbar"
+   "main"
+   "sidebar"
+   "footer";
+  }
+  
+  body > aside > section {
+    padding: 0.8em 2.5em;
+  }
+}
+
+/* PHONE */
+@media only screen and (max-width: 650px) {
+  body > header {
+    background-color: var(--sidebar-color);
+    color: var(--sidebar-text);
+  }
+
+  body > header a {
+    color: var(--sidebar-text);
+  }
+
+  #main-menu {
+    flex-direction: column;
+    display: none;
+  }
+
+  #menu-toggle {
+    display: block;
+  }
+  
+  .dropdown ul, li {
+    width: 100%;
+  }
+
+  .dropdown-content {
+    position: static;
+    padding-left: 2em;
+    box-shadow: none;
+  }
+    
+  .multiplePosts > article {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-gap: 2em;
+    grid-template-areas: "multiplePostsHeader"
+    "multiplePostsFigure"
+    "multiplePostsMainContent"
+    "multiplePostsReadMore";
+  }
+
+  .multiplePosts > article > a {
+    justify-self: center;
+  }
+}

@@ -1,0 +1,4 @@
+Manifest-Version: 1.0
+Main-Class: no.hiof.mariumi.oblig4.customcomponents.numberfield.Number
+ FieldFX
+

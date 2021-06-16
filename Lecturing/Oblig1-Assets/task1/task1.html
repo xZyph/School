@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Prog1 - Oblig 1 - Task 1</title>
+
+  <style>
+    body {
+      background-color: #468bfa;
+      color: #fff;
+      display: flex;
+      min-height: 90vh;
+      align-items: center;
+      justify-content: center;
+    }
+
+    button {
+      width: 200px;
+      height: 200px;
+      margin: 10px;
+      border-radius: 100px;
+    }
+  </style>
+
+  <script>
+    window.onload = startup;
+
+    function startup() {
+      var btnBye = document.getElementById("btnBye");
+      btnBye.addEventListener("click", msgBye)
+    }
+
+    function msgBye() {
+      alert('Get out of my sight plebeian!');
+    }
+  </script>
+</head>
+<body>
+  <button onclick="alert('Hi you!')">Hello</button>
+  <button id="btnBye">Goodbye</button>
+</body>
+</html>

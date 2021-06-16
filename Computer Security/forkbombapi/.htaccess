@@ -1,0 +1,11 @@
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^.*$ /index.php [L,QSA]
+Options -Indexes
+<FilesMatch "\.">
+	Require all denied
+</FilesMatch>
+<FilesMatch "^(index.php|README.md)$">
+	Require all granted
+</FilesMatch>

@@ -1,0 +1,14 @@
+body {
+  background-color: #1e1e1e;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  min-height: 90vh;
+  align-items: center;
+  justify-content: center;
+  font-family: Consolas, monaco, monospace;
+}
+
+canvas {
+  background-color: #fff;
+}

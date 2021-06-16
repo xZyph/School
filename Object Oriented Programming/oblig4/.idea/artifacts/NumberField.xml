@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="NumberField">
+    <output-path>$PROJECT_DIR$/out/artifacts/NumberField</output-path>
+    <root id="archive" name="NumberField.jar">
+      <element id="module-output" name="oblig4" />
+    </root>
+  </artifact>
+</component>

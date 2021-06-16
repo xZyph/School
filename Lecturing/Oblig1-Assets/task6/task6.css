@@ -1,0 +1,9 @@
+body {
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    align-items: center;
+    min-height: 80vh;
+    justify-content: center;
+    text-align: center;
+}

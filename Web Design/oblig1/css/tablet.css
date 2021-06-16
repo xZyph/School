@@ -1,0 +1,35 @@
+body {
+	width: 80vw;
+}
+
+body aside li {
+	padding-left: 40px;
+}
+
+body #validation {
+	padding-left: 75%;
+}
+
+body #deviceCheck {
+	padding-top: 25px;
+}
+
+.posts {
+  grid-template-columns: 1fr 1fr;
+}
+
+#computer {
+	display: none !important;
+}
+
+#tablet {
+	display: block !important;
+}
+
+#phone {
+	display: none !important;
+}
+
+#iframeContainer {
+	width: 600px;
+}

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Scaling Canvas</title>
+
+    <style>
+        body {
+            background-color: #1e1e1e;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            min-height: 90vh;
+            align-items: center;
+            justify-content: center;
+            font-family: Consolas, monaco, monospace;
+        }
+
+        input {
+            margin: 20px;
+        }
+
+        input[type=range][orient=vertical] {
+            writing-mode: bt-lr; /* IE */
+            -webkit-appearance: slider-vertical; /* WebKit */
+            width: 8px;
+        }
+
+        canvas {
+            background-color: #fff;
+        }
+
+        div {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+    </style>
+
+    <script>
+        window.onload = startup;
+
+        function startup() {
+            let canvas = document.getElementById("draw"),
+                ctx = canvas.getContext("2d"),
+                widthRange = document.getElementById("width"),
+                heightRange = document.getElementById("height");
+
+            widthRange.oninput = draw;
+            heightRange.oninput = draw;
+
+            draw();
+
+            function draw() {
+                canvas.height = heightRange.value;
+                canvas.width = widthRange.value;
+
+                let hPercent = canvas.height / 100,
+                    wPercent = canvas.width / 100;
+
+                ctx.fillRect(
+                    wPercent * 10, 
+                    hPercent * 10, 
+                    canvas.width - (wPercent * 20), 
+                    canvas.height - (hPercent * 20)
+                );
+
+                ctx.clearRect(
+                    wPercent * 20,
+                    hPercent * 20,
+                    canvas.width - (wPercent * 40),
+                    canvas.height - (hPercent * 40)
+                );
+
+                ctx.beginPath();
+                ctx.moveTo(wPercent * 20, hPercent * 20);
+                ctx.lineTo(wPercent * 40, hPercent * 40);
+
+                ctx.moveTo(canvas.width - (wPercent * 20), hPercent * 20);
+                ctx.lineTo(canvas.width - (wPercent * 40), hPercent * 40);
+
+                ctx.moveTo(canvas.width - (wPercent * 20), canvas.height - (hPercent * 20));
+                ctx.lineTo(canvas.width - (wPercent * 40), canvas.height - (hPercent * 40));
+
+                ctx.moveTo(wPercent * 20, canvas.height - (hPercent * 20));
+                ctx.lineTo(wPercent * 40, canvas.height - (hPercent * 40));
+                ctx.stroke();
+
+                ctx.fillStyle = "#666";
+                ctx.fillRect(
+                    wPercent * 30,
+                    hPercent * 30,
+                    canvas.width - (wPercent * 60),
+                    canvas.height - (hPercent * 60)
+                );
+            }
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <input type="range" id="height" min="50" max="800" step="50" value="600" orient="vertical" />
+        <canvas id="draw" width="600" height="600"></canvas>
+    </div>
+    <input type="range" id="width" min="50" max="800" step="50" value="600" />
+</body>
+</html>

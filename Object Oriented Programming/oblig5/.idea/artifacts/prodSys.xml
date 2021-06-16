@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="prodSys">
+    <output-path>$PROJECT_DIR$/out/artifacts/prodSys</output-path>
+    <root id="archive" name="prodSys.jar">
+      <element id="module-output" name="oblig5" />
+    </root>
+  </artifact>
+</component>
